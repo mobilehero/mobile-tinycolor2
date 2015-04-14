@@ -1,3 +1,4 @@
+>This is a fork of https://github.com/bgrins/TinyColor
 >This project has been modified from the original to be smaller and more compatible for use with the MobileHero Platform.
 
 # TinyColor
