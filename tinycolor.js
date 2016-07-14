@@ -503,22 +503,21 @@ function rgbToHex(r, g, b, allow3Char) {
 
     return hex.join("");
 }
+    // `rgbaToHex`
+    // Converts an RGBA color plus alpha transparency to hex
+    // Assumes r, g, b and a are contained in the set [0, 255]
+    // Returns an 8 character hex
+    function rgbaToHex(r, g, b, a) {
 
-// `rgbaToHex`
-// Converts an RGBA color plus alpha transparency to hex
-// Assumes r, g, b and a are contained in the set [0, 255]
-// Returns an 8 character hex
-function rgbaToHex(r, g, b, a) {
+        var hex = [
+            pad2(convertDecimalToHex(a)),
+            pad2(mathRound(r).toString(16)),
+            pad2(mathRound(g).toString(16)),
+            pad2(mathRound(b).toString(16))
+        ];
 
-    var hex = [
-        pad2(convertDecimalToHex(a)),
-        pad2(mathRound(r).toString(16)),
-        pad2(mathRound(g).toString(16)),
-        pad2(mathRound(b).toString(16))
-    ];
-
-    return hex.join("");
-}
+        return hex.join("");
+    }
 
 // `equals`
 // Can be called with any tinycolor input
@@ -526,7 +525,6 @@ tinycolor.equals = function (color1, color2) {
     if (!color1 || !color2) { return false; }
     return tinycolor(color1).toRgbString() == tinycolor(color2).toRgbString();
 };
-
 tinycolor.random = function() {
     return tinycolor.fromRatio({
         r: mathRandom(),
@@ -725,6 +723,7 @@ tinycolor.readability = function(color1, color2) {
 // *Example*
 //    tinycolor.isReadable("#000", "#111") => false
 //    tinycolor.isReadable("#000", "#111",{level:"AA",size:"large"}) => false
+
 tinycolor.isReadable = function(color1, color2, wcag2) {
     var readability = tinycolor.readability(color1, color2);
     var wcag2Parms, out;
@@ -757,6 +756,8 @@ tinycolor.isReadable = function(color1, color2, wcag2) {
 //    tinycolor.mostReadable(tinycolor.mostReadable("#123", ["#124", "#125"],{includeFallbackColors:true}).toHexString();  // "#ffffff"
 //    tinycolor.mostReadable("#a8015a", ["#faf3f3"],{includeFallbackColors:true,level:"AAA",size:"large"}).toHexString(); // "#faf3f3"
 //    tinycolor.mostReadable("#a8015a", ["#faf3f3"],{includeFallbackColors:true,level:"AAA",size:"small"}).toHexString(); // "#ffffff"
+
+
 tinycolor.mostReadable = function(baseColor, colorList, args) {
     var bestColor = null;
     var bestScore = 0;
@@ -1146,7 +1147,6 @@ function validateWCAG2Parms(parms) {
     }
     return {"level":level, "size":size};
 }
-
 // Node: Export function
 if (typeof module !== "undefined" && module.exports) {
     module.exports = tinycolor;
