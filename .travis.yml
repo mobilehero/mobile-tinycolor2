@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '8'
+deploy:
+  provider: npm
+  email: brenton.house@gmail.com
+  api_key:
+    secure: 
+  on:
+    tags: true
+    repo: mobilhero/mobile-tinycolor2
+  branches:
+    only:
+    - master

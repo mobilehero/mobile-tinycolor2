@@ -1,44 +1,51 @@
 {
-  "version": "1.4.1",
-  "name": "@mobile/tinycolor2",
-  "description": "Repackaged version of tinycolor2 for mobile",
-  "url": "http://bgrins.github.com/TinyColor",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://bgrins.github.com/TinyColor"
-  },
-  "keywords": [
-    "color",
-    "parser",
-    "tinycolor",
-    "mobile"
-  ],
-  "author": "Brian Grinstead <briangrinstead@gmail.com> (http://briangrinstead.com)",
-  "contributors": [],
-  "main": "./tinycolor.js",
-  "directories": {},
-  "engines": {
-    "node": "*"
-  },
-  "scripts": {
-    "download": "npm install %npm_package_source_name%@%npm_package_version%",
-    "commit": "git add -A && git commit -m \":checkered_flag: v%npm_package_version% :heavy_minus_sign: Repackaging from: %npm_package_source_url%\"",
-    "tag": "git tag v%npm_package_version%",
-    "push": "git push && git push --tags",
-    "update:version": "npm --no-git-tag-version version --",
-    "update:download": "npm run update:version --",
-    "update:copy": "cp ./node_modules/tinycolor2/tinycolor.js .",
-    "update:commit": "npm run update:version --",
-    "update:push": "npm run update:version --",
-    "update:publish": "npm run update:version --",
-    "postupdate:download": "npm run download && npm run update:copy",
-    "postupdate:commit": "npm run commit && npm run tag",
-    "postupdate:push": "npm run postupdate:download && npm run postupdate:commit && npm run push",
-    "postupdate:publish": "npm run postupdate:push && npm publish"
-  },
-  "source": {
-    "name": "tinycolor2",
-    "url": "https://www.npmjs.com/package/tinycolor2"
-  }
+	"version": "1.4.1-1",
+	"name": "@mobile/tinycolor2",
+	"alias": "tinycolor2",
+	"description": "Repackaged version of tinycolor2 for mobile",
+	"url": "http://bgrins.github.com/TinyColor",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://bgrins.github.com/TinyColor"
+	},
+	"keywords": [
+		"color",
+		"parser",
+		"tinycolor",
+		"mobile"
+	],
+	"author": "Brian Grinstead <briangrinstead@gmail.com> (http://briangrinstead.com)",
+	"contributors": [],
+	"main": "./tinycolor.js",
+	"directories": {},
+	"engines": {
+		"node": "*"
+	},
+	"scripts": {
+		"download": "npm install %npm_package_source_name%@%npm_package_version%",
+		"commit": "git add -A && git commit -m \":checkered_flag: v%npm_package_version% :heavy_minus_sign: Repackaging from: %npm_package_source_url%\"",
+		"tag": "git tag v%npm_package_version%",
+		"push": "git push && git push --tags",
+		"update:version": "npm --no-git-tag-version version --",
+		"update:download": "npm run update:version --",
+		"update:copy": "cp ./node_modules/tinycolor2/tinycolor.js .",
+		"update:commit": "npm run update:version --",
+		"update:push": "npm run update:version --",
+		"update:publish": "npm run update:version --",
+		"postupdate:download": "npm run download && npm run update:copy",
+		"postupdate:commit": "npm run commit && npm run tag",
+		"postupdate:push": "npm run postupdate:download && npm run postupdate:commit && npm run push",
+		"postupdate:publish": "npm run postupdate:push && npm publish"
+	},
+	"source": {
+		"name": "tinycolor2",
+		"url": "https://www.npmjs.com/package/tinycolor2"
+	},
+	"mobile": {
+		"alias": "tinycolor2"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }
