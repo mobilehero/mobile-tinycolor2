@@ -1,5 +1,5 @@
 {
-	"version": "1.4.1-1",
+	"version": "1.4.1-2",
 	"name": "@mobile/tinycolor2",
 	"alias": "tinycolor2",
 	"description": "Repackaged version of tinycolor2 for mobile",
@@ -37,6 +37,11 @@
 		"postupdate:commit": "npm run commit && npm run tag",
 		"postupdate:push": "npm run postupdate:download && npm run postupdate:commit && npm run push",
 		"postupdate:publish": "npm run postupdate:push && npm publish"
+	},
+	"devDependencies": {
+		"eslint": "^4.14.0",
+		"eslint-plugin-jsdoc": "^3.3.0",
+		"eslint-plugin-promise": "^3.6.0"
 	},
 	"source": {
 		"name": "tinycolor2",
